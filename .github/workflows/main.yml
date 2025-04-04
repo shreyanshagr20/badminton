@@ -22,10 +22,10 @@ jobs:
         run: |
           pip install selenium
           pip install webdriver-manager
-          sudo apt-get update
-          sudo apt-get install -y chromium-chromedriver
-          sudo cp /usr/lib/chromium-browser/chromedriver /usr/bin
-          which chromedriver
+          # sudo apt-get update
+          # sudo apt-get install -y chromium-chromedriver
+          # sudo cp /usr/lib/chromium-browser/chromedriver /usr/bin
+          # which chromedriver
 
       - name: Run the Selenium script
         run: |
