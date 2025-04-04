@@ -2,7 +2,7 @@ name: Run Selenium Daily
 
 on:
   schedule:
-    - cron: '12 * * *'  # Runs every day at 9 AM UTC
+    - cron: "0 12 * * *"  # Runs every day at 9 AM UTC
   workflow_dispatch:       # (optional) allows manual trigger via GitHub UI
 
 jobs:
