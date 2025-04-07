@@ -16,6 +16,7 @@ options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+print("DRIVER INITIALIZED")
 
 # Navigate to the login page of your app
 driver.get('https://walmart.clubautomation.com/')
@@ -31,13 +32,14 @@ driver.find_element(By.XPATH,'//*[@id="password"]').send_keys(password)
 driver.find_element(By.XPATH,'//*[@id="loginButton"]').click()
 
 time.sleep(3)
+print("LOGGED IN")
 
-# go to reservations
-driver.find_element(By.XPATH,'//*[@id="menu_reserve_a_court"]').click()
+# # go to reservations
+# driver.find_element(By.XPATH,'//*[@id="menu_reserve_a_court"]').click()
 
-# Select "Gym"
-driver.find_element(By.XPATH,'//*[@id="component_chosen"]').click()
-driver.find_element(By.XPATH,'//*[@id="component_chosen"]/div/ul/li[1]').click()
+# # Select "Gym"
+# driver.find_element(By.XPATH,'//*[@id="component_chosen"]').click()
+# driver.find_element(By.XPATH,'//*[@id="component_chosen"]/div/ul/li[1]').click()
 
 
 # go to reservations
