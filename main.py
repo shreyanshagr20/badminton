@@ -85,6 +85,7 @@ print("step 11")
 
 to_book = ['5:30pm', '6:00pm', '6:30pm']
 
+# booking slot
 for e in slot_times:
     slot_time = e.get_attribute('text')
     slot_time = slot_time.strip()
@@ -93,14 +94,14 @@ for e in slot_times:
 
     if slot_time in to_book:
         e.click()
+        
+        # final reservation click
+        time.sleep(3)
+        driver.find_element(By.XPATH,'//*[@id="confirm"]').click()
+        print("step final")
         print("Badminton slot booked: ", slot_time)
+        
         break
     
 ####
-
-# final reservation click
-time.sleep(3)
-driver.find_element(By.XPATH,'//*[@id="confirm"]').click()
-print("step final")
-
 driver.quit()
