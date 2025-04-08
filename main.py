@@ -20,6 +20,7 @@ print("DRIVER INITIALIZED")
 
 # Navigate to the login page of your app
 driver.get('https://walmart.clubautomation.com/')
+print("step 1")
 
 # username and password
 u_name = 'sagrawal'
@@ -44,33 +45,43 @@ print("LOGGED IN")
 
 # go to reservations
 driver.find_element(By.XPATH,'//*[@id="menu_reserve_a_court"]').click()
+print("step 2")
 
 # Select "Gym"
 driver.find_element(By.XPATH,'//*[@id="component_chosen"]').click()
+print("step 3")
 driver.find_element(By.XPATH,'//*[@id="component_chosen"]/div/ul/li[1]').click()
+print("step 4")
 
 
 time.sleep(2)
 
 driver.find_element(By.XPATH,'//*[@id="location_chosen"]').click()
+print("step 5")
 driver.find_element(By.XPATH,'//*[@id="location_chosen"]/div/ul/li[4]').click()
+print("step 6")
 time.sleep(5)
 
 
 #selecting date
 driver.find_element(By.XPATH,'//*[@id="date"]').clear()
+print("step 7")
 driver.find_element(By.XPATH,'//*[@id="date"]').send_keys('04/11/2025')
+print("step 8")
 
 #90 mins
 driver.find_element(By.XPATH,'//*[@id="reserve-court-filter"]/div[3]/div[7]/div[3]/div/div/label[3]/span').click()
+print("step 9")
 
 #search click
 driver.find_element(By.XPATH,'//*[@id="reserve-court-search"]').click()
+print("step 10")
 
 # driver.find_element(By.XPATH,'//*[@id="timeFrom_chosen"]').click()
 
 ## select slot time
 slot_times = driver.find_elements(By.XPATH,'//*[@id="times-to-reserve"]/tbody/tr/td/a')
+print("step 11")
 
 to_book = ['5:30pm', '6:00pm', '6:30pm']
 
@@ -90,5 +101,6 @@ for e in slot_times:
 # final reservation click
 time.sleep(3)
 driver.find_element(By.XPATH,'//*[@id="confirm"]').click()
+print("step final")
 
 driver.quit()
