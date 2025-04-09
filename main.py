@@ -14,7 +14,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 ### headless options
 options = Options()
-options.add_argument('--headless')
+options.add_argument('--headless=new')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
@@ -69,6 +69,9 @@ print("step 4")
 WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="location_chosen"]'))).click()
 print("step 5")
 time.sleep(1)
+WebDriverWait(driver, 20).until(
+    lambda d: d.execute_script("return document.readyState") == "complete"
+)
 WebDriverWait(driver, 10).until( EC.element_to_be_clickable((By.XPATH,'//*[@id="location_chosen"]/div/ul/li[4]'))).click()
 #driver.find_element(By.XPATH,'//*[@id="location_chosen"]/div/ul/li[4]').click()
 print("step 6")
