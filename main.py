@@ -96,6 +96,7 @@ print("step 10")
 # WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="timeFrom_chosen"]').click()
 
 ## select slot time
+time.sleep(2)
 slot_times = driver.find_elements(By.XPATH,'//*[@id="times-to-reserve"]/tbody/tr/td/a')
 print("step 11")
 
@@ -110,22 +111,22 @@ if len(slot_times)>0:
 
         print(slot_time)
 
-        if slot_time in to_book:
-            e.click()
+        # if slot_time in to_book:
+        #     e.click()
             
-            # final reservation click
-            #time.sleep(3)
-            WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="confirm"]'))).click()
-            print("step final")
-            print("Badminton slot booked: ", slot_time)
+        #     # final reservation click
+        #     #time.sleep(3)
+        #     WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="confirm"]'))).click()
+        #     print("step final")
+        #     print("Badminton slot booked: ", slot_time)
             
-            break
+        #     break
 
-        else:
-            print("No relevant slots found")
+        # else:
+        #     print("No relevant slots found")
 
 else:
     print("No slots found")
     
 ####
-#driver.quit()
+driver.quit()
