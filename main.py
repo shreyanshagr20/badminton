@@ -6,6 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 import time
+from datetime import date, timedelta
 
 # Set up Chrome WebDriver (you can replace this with another browser driver like Firefox if needed)
 
@@ -25,6 +26,10 @@ print("step 1")
 # username and password
 u_name = 'sagrawal'
 password = 'Myfitnesspass01@'
+
+#date time
+next_week = date.today() + timedelta(days=7)
+next_week = next_week.strftime("%m/%d/%Y")
 
 
 # login
@@ -66,16 +71,18 @@ time.sleep(5)
 #selecting date
 driver.find_element(By.XPATH,'//*[@id="date"]').clear()
 print("step 7")
-driver.find_element(By.XPATH,'//*[@id="date"]').send_keys('04/11/2025')
+driver.find_element(By.XPATH,'//*[@id="date"]').send_keys(next_week)
 print("step 8")
 
 #90 mins
 driver.find_element(By.XPATH,'//*[@id="reserve-court-filter"]/div[3]/div[7]/div[3]/div/div/label[3]/span').click()
+#driver.find_element(By.XPATH,'//*[@id="reserve-court-filter"]/div[3]/div[7]/div[3]/div/div/label[1]/span').click() #for 30 mins, change to 2 for 6 mins
 print("step 9")
 
 #search click
 driver.find_element(By.XPATH,'//*[@id="reserve-court-search"]').click()
 print("step 10")
+time.sleep(2)
 
 # driver.find_element(By.XPATH,'//*[@id="timeFrom_chosen"]').click()
 
