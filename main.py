@@ -68,6 +68,7 @@ print("step 4")
 
 WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="location_chosen"]'))).click()
 print("step 5")
+time.sleep(1)
 WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="location_chosen"]/div/ul/li[4]'))).click()
 print("step 6")
 #time.sleep(5)
