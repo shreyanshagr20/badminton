@@ -55,11 +55,10 @@ print("step 2")
 # Select "Gym"
 driver.find_element(By.XPATH,'//*[@id="component_chosen"]').click()
 print("step 3")
+
 driver.find_element(By.XPATH,'//*[@id="component_chosen"]/div/ul/li[1]').click()
-print("step 4")
-
-
 time.sleep(2)
+print("step 4")
 
 driver.find_element(By.XPATH,'//*[@id="location_chosen"]').click()
 print("step 5")
@@ -109,6 +108,9 @@ for e in slot_times:
         print("Badminton slot booked: ", slot_time)
         
         break
+
+    else:
+        print("No relevant slots found")
     
 ####
 driver.quit()
