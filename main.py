@@ -18,7 +18,10 @@ options.add_argument('--headless=new')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+#driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+service = Service('/usr/bin/chromedriver')  # path to your installed chromedriver
+driver = webdriver.Chrome(service=service, options=options)
+
 print("DRIVER INITIALIZED")
 
 # Navigate to the login page of your app
