@@ -18,13 +18,29 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install Chrome & Chromedriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip
+          sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb
+          
+          # Get Chrome version
+          CHROME_VERSION=$(google-chrome --version | grep -oP "\d+\.\d+\.\d+" | head -1)
+          
+          # Download matching ChromeDriver
+          wget -q "https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)/chromedriver_linux64.zip"
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/bin/chromedriver
+          sudo chmod +x /usr/bin/chromedriver
+
       - name: Install dependencies
         run: |
           pip install selenium
           pip install webdriver-manager
 
-      - name: Set up Chrome
-        uses: browser-actions/setup-chrome@v1
+      # - name: Set up Chrome
+      #   uses: browser-actions/setup-chrome@v1
 
       - name: Run Selenium script
         run: |
