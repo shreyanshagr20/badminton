@@ -101,7 +101,7 @@ driver.find_element(By.XPATH,'//*[@id="reserve-court-filter"]/div[3]/div[7]/div[
 #WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="reserve-court-filter"]/div[3]/div[7]/div[3]/div/div/label[1]/span').click() #for 30 mins, change to 2 for 6 mins
 print("step 9")
 
-driver.save_screenshot("before_click1.png")
+#driver.save_screenshot("before_click1.png")
 #search click
 WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="reserve-court-search"]'))).click()
 print("step 10")
@@ -112,7 +112,7 @@ print("step 10")
 ## select slot time
 time.sleep(2)
 #slot_times = driver.find_elements(By.XPATH,'//*[@id="times-to-reserve"]/tbody/tr/td/a')
-driver.save_screenshot("before_click2.png")
+driver.save_screenshot("before_click1.png")
 slot_times = WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="times-to-reserve"]/tbody/tr/td/a')))
 print("step 11")
 print(len(slot_times))
