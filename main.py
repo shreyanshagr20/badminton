@@ -65,18 +65,24 @@ print("step 2")
 WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="component_chosen"]'))).click()
 print("step 3")
 
-WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="component_chosen"]/div/ul/li[1]'))).click()
+#WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="component_chosen"]/div/ul/li[1]'))).click()
+driver.find_element(By.XPATH,'//*[@id="component_chosen"]/div/ul/li[1]').click()
 time.sleep(2)
 print("step 4")
 
-WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="location_chosen"]'))).click()
+#WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="location_chosen"]'))).click()
+
+driver.find_element(By.XPATH,'//*[@id="location_chosen"]').click()
+
 print("step 5")
+
 time.sleep(1)
 WebDriverWait(driver, 20).until(
     lambda d: d.execute_script("return document.readyState") == "complete"
 )
-WebDriverWait(driver, 10).until( EC.element_to_be_clickable((By.XPATH,'//*[@id="location_chosen"]/div/ul/li[4]'))).click()
-#driver.find_element(By.XPATH,'//*[@id="location_chosen"]/div/ul/li[4]').click()
+
+#WebDriverWait(driver, 10).until( EC.element_to_be_clickable((By.XPATH,'//*[@id="location_chosen"]/div/ul/li[4]'))).click()
+driver.find_element(By.XPATH,'//*[@id="location_chosen"]/div/ul/li[4]').click()
 print("step 6")
 #time.sleep(5)
 
