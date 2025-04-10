@@ -51,4 +51,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: selenium-screenshot
-          path: before_click.png
+          path: before_click1.png
