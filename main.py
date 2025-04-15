@@ -97,7 +97,7 @@ print("step 8")
 
 #90 mins
 #WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="reserve-court-filter"]/div[3]/div[7]/div[3]/div/div/label[3]/span'))).click()
-driver.find_element(By.XPATH,'//*[@id="reserve-court-filter"]/div[3]/div[7]/div[3]/div/div/label[1]/span' ).click()
+driver.find_element(By.XPATH,'//*[@id="reserve-court-filter"]/div[3]/div[7]/div[3]/div/div/label[3]/span' ).click()
 #WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="reserve-court-filter"]/div[3]/div[7]/div[3]/div/div/label[1]/span').click() #for 30 mins, change to 2 for 6 mins
 print("step 9")
 
