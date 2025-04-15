@@ -34,7 +34,7 @@ u_name = 'sagrawal'
 password = 'Myfitnesspass01@'
 
 #date time
-next_week = date.today() + timedelta(days=1)
+next_week = date.today() + timedelta(days=7)
 next_week = next_week.strftime("%m/%d/%Y")
 
 
