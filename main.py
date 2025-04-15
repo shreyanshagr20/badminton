@@ -141,8 +141,8 @@ if len(slot_times)>0:
             
             break
 
-        else:
-            print("No relevant slots found")
+        # else:
+        #     print("No relevant slots found")
 
 else:
     print("No slots found")
