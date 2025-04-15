@@ -34,7 +34,7 @@ u_name = 'sagrawal'
 password = 'Myfitnesspass01@'
 
 #date time
-next_week = date.today() + timedelta(days=7)
+next_week = date.today() + timedelta(days=1)
 next_week = next_week.strftime("%m/%d/%Y")
 
 
@@ -112,12 +112,14 @@ print("step 10")
 ## select slot time
 time.sleep(2)
 #slot_times = driver.find_elements(By.XPATH,'//*[@id="times-to-reserve"]/tbody/tr/td/a')
-driver.save_screenshot("before_click1.png")
-slot_times = WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="times-to-reserve"]/tbody/tr/td/a')))
+#driver.save_screenshot("before_click1.png")
+#slot_times = WebDriverWait(driver, 10).until( EC.visibility_of_element_located((By.XPATH,'//*[@id="times-to-reserve"]/tbody/tr/td/a')))
+slot_times = driver.find_elements(By.XPATH,'//*[@id="times-to-reserve"]/tbody/tr/td/a')
+
 print("step 11")
 print(len(slot_times))
 
-to_book = ['6:00pm', '6:30pm', '5:30pm','9:30pm']
+to_book = ['6:00pm', '6:30pm', '7:00pm' '5:30pm','9:30pm']
 
 if len(slot_times)>0:
 
