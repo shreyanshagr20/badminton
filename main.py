@@ -37,7 +37,7 @@ print("step 1")
 print("opened website at:")
 print(datetime.datetime.now().time())
 
-target_time = datetime.time(15,36,0) # set to trigger at 7 AM CDT (12,0,0 UTC due to daylight savings)
+target_time = datetime.time(12,0,0) # set to trigger at 7 AM CDT (12,0,0 UTC due to daylight savings)
 while True:
     now = datetime.datetime.now().time()
     if now >= target_time:
