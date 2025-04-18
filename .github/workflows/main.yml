@@ -2,7 +2,7 @@ name: Run Selenium Daily
 
 on:
   schedule:
-    - cron: "27 11 * * *"
+    - cron: "4 11 * * *" #at 6:11 AM the code should get triggered
 
   workflow_dispatch:
 
