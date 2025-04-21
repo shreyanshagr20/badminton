@@ -12,6 +12,20 @@ from selenium.webdriver.support import expected_conditions as EC
 import datetime
 import time
 
+
+print("opened website at:")
+print(datetime.datetime.now().time())
+
+target_time = datetime.time(12,0,0) # set to trigger at 7 AM CDT (12,0,0 UTC due to daylight savings)
+while True:
+    now = datetime.datetime.now().time()
+    if now >= target_time:
+        break
+    time.sleep(1)
+    
+print("booking process started now:")    
+print(datetime.datetime.now().time())
+
 # Set up Chrome WebDriver (you can replace this with another browser driver like Firefox if needed)
 
 print("code triggered at:")
@@ -34,18 +48,6 @@ print("DRIVER INITIALIZED")
 driver.get('https://walmart.clubautomation.com/')
 print("step 1")
 
-print("opened website at:")
-print(datetime.datetime.now().time())
-
-target_time = datetime.time(12,0,0) # set to trigger at 7 AM CDT (12,0,0 UTC due to daylight savings)
-while True:
-    now = datetime.datetime.now().time()
-    if now >= target_time:
-        break
-    time.sleep(1)
-    
-print("booking process started now:")    
-print(datetime.datetime.now().time())
 
 # username and password
 u_name = 'sagrawal'
